@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-[#F8FAFC] min-h-[100vh] max-w-[1600px] mx-auto p-5 md:px-30 md:py-10"
+  >
+    <header>
+      <div>
+        <h1 class="text-3xl font-bold">Job Application Tracker</h1>
+        <div class="grid sm:grid-cols-3 gap-10 mt-5">
+          <div class="bg-[#fff] p-3 rounded">
+            <p>Total</p>
+            <h2 class="text-xl font-semibold" id="total">8</h2>
+          </div>
+          <div class="bg-[#fff] p-3 rounded">
+            <p>Interview</p>
+            <h2 class="text-xl font-semibold text-green-300" id="interview">
+              0
+            </h2>
+          </div>
+          <div class="bg-[#fff] p-3 rounded">
+            <p>Rejected</p>
+            <h2 class="text-xl font-semibold text-red-300" id="rejected">0</h2>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <hr class="my-7 text-[#ddd]" />
+
+    <main>
+      <section>
+        <div class="flex justify-between mb-2">
+          <h1 class="font-bold text-xl">Available Jobs</h1>
+          <p class="text-blear">
+            <span class="current-card">
+              <span class="current-number">0</span> of <span> </span>
+            </span>
+            <span id="totalCard"> 8</span> Jobs
+          </p>
+        </div>
+        <div class="text">
+          <input class="all button active" type="button" value="All" />
+          <input
+            class="total-interview button"
+            type="button"
+            value="Interview"
+          />
+          <input class="total-rejected button" type="button" value="Rejected" />
+        </div>
+      </section>
+
+      <section>
+        <ul></ul>
+        <div
+          class="emtyDive text-center border-2 border-[#ddd] rounded-xl p-10 my-5"
+        >
+          <img class="mx-auto" src="./jobs.png" alt="image" />
+          <h1 class="text-xl font-bold mt-8">No jobs available</h1>
+          <p class="text-blear mt-3">
+            Check back soon for new job opportunities
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

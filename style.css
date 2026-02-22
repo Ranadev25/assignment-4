@@ -1,0 +1,112 @@
+body {
+  font-family: "Inter", sans-serif;
+  color: rgba(0, 44, 92);
+}
+
+.text-blear {
+  color: rgb(100, 116, 149);
+}
+.text {
+  color: rgb(50, 59, 73);
+}
+
+.all {
+  display: inline-block;
+  padding: 5px 0;
+  width: 100px;
+  background: #fff;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.total-interview {
+  display: inline-block;
+  padding: 5px 0;
+  width: 100px;
+  background: #fff;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.total-rejected{
+  display: inline-block;
+  padding: 5px 0;
+  width: 100px;
+  background: #fff;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.company {
+  font-size: 19px;
+  font-weight: 600;
+}
+.position {
+  color: rgb(100, 116, 149);
+}
+
+.lavel-up {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.delete-icon {
+  color: rgb(100, 116, 149);
+  border: 2px solid rgb(100, 116, 149);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.location {
+  color: rgb(100, 116, 149);
+  margin: 20px 0;
+}
+.current-status {
+  color: black;
+  background: rgba(0, 0, 255, 0.137);
+  padding: 5px 15px;
+}
+.desc {
+  color: rgb(50, 59, 73);
+  font-size: 16px;
+  margin: 10px 0;
+}
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+.interview {
+  color: rgb(6, 188, 6);
+  border: 2px solid rgb(6, 188, 6);
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.rejected {
+  color: rgb(184, 7, 7);
+  border: 2px solid rgb(184, 7, 7);
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.active{
+  background: blue;
+  color:white;
+}
+
+.current-interview{
+  color:rgb(7, 234, 7);
+  border:2px solid rgb(8, 213, 8);
+  background: rgba(12, 162, 12, 0.265);
+}
+.current-rejected{
+  color:rgb(234, 26, 7);
+  border:2px solid rgb(127, 35, 7);
+  background: rgba(106, 13, 4, 0.321);
+}
