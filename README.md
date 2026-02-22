@@ -41,5 +41,6 @@ Answer::
 
 ## What to submit: 
 
-1. GitHub Repository Link: 
-2. Live Site Link: 
+1. GitHub Repository Link: https://github.com/Ranadev25/assignment-4
+
+2. Live Site Link: https://ranadev25.github.io/assignment-4/
