@@ -86,21 +86,20 @@ const emtyDive = document.querySelector(".emtyDive");
 let interviewList = [];
 let rejectedList = [];
 
+function updateCounts() {
+  total.innerText = jobs.length;
+  totalCard.innerText = jobs.length;
+  interview.innerText = interviewList.length;
+  rejected.innerText = rejectedList.length;
+  emtyDive.style.display = "none";
+}
 
-total.innerText = jobs.length;
-totalCard.innerText = jobs.length;
-interview.innerText = interviewList.length;
-rejected.innerText = rejectedList.length;
-emtyDive.style.display = "none";
-
-
+updateCounts();
 
 document.addEventListener("DOMContentLoaded", () => {
   handelRenderJobs(jobs, "all");
   current_card.style.display = "none";
 });
-
-
 
 activeButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -118,31 +117,37 @@ activeButtons.forEach((button) => {
         : (emtyDive.style.display = "none");
 
       handelRenderJobs(interviewList, "interview");
+      
+
       if (interviewList.length >= 1) {
         current_card.style.display = "inline-block";
         current_number.innerHTML = interviewList.length;
       } else {
         current_number.innerHTML = 0;
         current_card.style.display = "none";
-        totalCard.innerText = 0;
+        totalCard.innerText = total.length;
       }
     } else if (button.value === "Rejected") {
       rejectedList.length === 0
         ? (emtyDive.style.display = "block")
         : (emtyDive.style.display = "none");
       handelRenderJobs(rejectedList, "rejected");
-      current_card.style.display = "inline-block";
+
+      if (rejectedList.length < 1) {
+        totalCard.innerText = jobs.length;
+      }
+      
       if (rejectedList.length >= 1) {
+        current_card.style.display = "inline-block";
         current_number.innerHTML = rejectedList.length;
       } else {
         current_number.innerHTML = 0;
         current_card.style.display = "none";
-        totalCard.innerText = 0;
+        totalCard.innerText = total.length;
       }
     }
   });
 });
-
 
 function handelRenderJobs(jobList, type) {
   ul.innerHTML = "";
@@ -165,10 +170,11 @@ function handelRenderJobs(jobList, type) {
     handelInterviewBtn(li, item, type);
 
     handelRejectedBtn(li, item, type);
-   
+
+  
+
   });
 }
-
 
 const handelInterviewBtn = (li, item, type) => {
   li.querySelector(".interview").addEventListener("click", () => {
@@ -182,6 +188,7 @@ const handelInterviewBtn = (li, item, type) => {
       li.classList.remove("border-l-4", "border-l-red-400");
       li.classList.add("border-l-4", "border-l-green-400");
     }
+
 
     rejectedList = rejectedList.filter((job) => job !== item);
     rejected.innerText = rejectedList.length;
@@ -197,11 +204,11 @@ const handelInterviewBtn = (li, item, type) => {
       rejectedList.length === 0
         ? (emtyDive.style.display = "block")
         : (emtyDive.style.display = "none");
+      
       if (rejectedList.length >= 1) {
         current_number.innerHTML = rejectedList.length;
       } else {
         current_number.innerHTML = 0;
-        totalCard.innerText = 0;
         current_card.style.display = "none";
       }
     }
@@ -239,7 +246,6 @@ const handelRejectedBtn = (li, item, type) => {
         current_number.innerHTML = interviewList.length;
       } else {
         current_number.innerHTML = 0;
-        totalCard.innerText = 0;
         current_card.style.display = "none";
       }
     }
@@ -274,7 +280,9 @@ const handelDeleteCard = (li, item, type) => {
       total.innerText = jobs.length;
       totalCard.innerText = jobs.length;
     } else if (type === "interview") {
+
       interviewList = interviewList.filter((job) => job !== item);
+
       interview.innerText = interviewList.length;
       interviewList.length === 0
         ? (emtyDive.style.display = "block")
